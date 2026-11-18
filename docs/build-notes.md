@@ -29,3 +29,21 @@ an HTTP response from Vision.
    sample restore.
 5. Explore an assistant that summarizes health reports and requires
    explicit approval before executing system changes.
+
+## Running update plan
+
+When a project milestone is reported, update this page with the date, step,
+result, and next action. Record the check that verified the result, such as
+a successful Compose validation or an HTTP response. If a test fails, record
+the error and the next troubleshooting step.
+
+Update the [repository README](../README.md) when the current checkpoint
+changes. Update the relevant instructions or configuration example when the
+tested procedure changes. Keep credentials, private network addresses, and
+unredacted logs out of commits to this public repository.
+
+### Update history
+
+| Date | Update | Result and next action |
+| --- | --- | --- |
+| 2026-11-18 | Published the initial project files on GitHub. | Verified the README, build notes, Nginx instructions, and Compose example on `main`. Step 15B remains open. Validate the corrected Compose file on Vision, then verify the container status and HTTP response. |
