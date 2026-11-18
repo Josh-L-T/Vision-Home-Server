@@ -32,15 +32,17 @@ an HTTP response from Vision.
 
 ## Running update plan
 
-When a project milestone is reported, update this page with the date, step,
-result, and next action. Record the check that verified the result, such as
-a successful Compose validation or an HTTP response. If a test fails, record
-the error and the next troubleshooting step.
+Update the repository only after a significant project change. Examples
+include completing a verified milestone, deploying or retiring a service,
+changing the network or security setup, and resolving a blocker that changes
+the project roadmap. Bundle routine troubleshooting and minor adjustments
+into the next relevant milestone entry.
 
-Update the [repository README](../README.md) when the current checkpoint
-changes. Update the relevant instructions or configuration example when the
-tested procedure changes. Keep credentials, private network addresses, and
-unredacted logs out of commits to this public repository.
+For each significant change, record the date, step, result, verification,
+and next action. Update the [repository README](../README.md) if that
+change moves the project checkpoint. Update the relevant instructions or
+configuration example if the tested procedure changes. Keep credentials,
+private network addresses, and unredacted logs out of the public repository.
 
 ### Update history
 
