@@ -1,0 +1,7 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: vision-nginx-test
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"
