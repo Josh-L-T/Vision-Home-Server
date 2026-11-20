@@ -22,11 +22,11 @@ project for my Cyber Warrior Program.
 - The project log records root and password SSH login disabled.
 - UFW and Fail2ban were active at the last recorded checks.
 - Docker Engine and Compose are installed.
-- Step 15B is in progress. The initial Nginx Compose file reported a
-  validation error, and deployment is awaiting verification on Vision.
+- Step 15B is in progress. The next Compose check uses a one-shot container
+  with no published ports. The NGINX test is deferred pending security checks.
 
 ## Project files
 
 - [Build notes and roadmap](docs/build-notes.md)
-- [Nginx test instructions](compose/nginx-test/README.md)
-- [Nginx Compose example](compose/nginx-test/compose.yaml)
+- [Deferred NGINX test plan](compose/nginx-test/README.md)
+- [Optional NGINX Compose example](compose/nginx-test/compose.yaml)
