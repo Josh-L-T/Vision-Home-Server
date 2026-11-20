@@ -1,24 +1,26 @@
-# Nginx Compose Test
+# NGINX Compose Test
 
-This example maps Nginx to Vision's loopback address on port 8080. In an
-SSH session on Vision, open this directory and validate the file.
+**Deployment deferred as of November 20, 2026.** Step 15B can validate
+Docker Compose without pulling or starting NGINX. See the
+[project roadmap](../../docs/build-notes.md#current-checkpoint).
 
-```sh
-sudo docker compose -f compose.yaml config
-```
+If Vision already has a running `vision-nginx-test` container, stop the test
+and keep it offline while checking its image and any previous exposure.
 
-After validation succeeds, start the container and check its status and
-HTTP response from Vision.
+## When the test resumes
 
-```sh
-sudo docker compose -f compose.yaml up -d
-sudo docker compose -f compose.yaml ps
-curl -I http://127.0.0.1:8080/
-```
+- Verify the current NGINX advisories and select a patched official image.
+  The example uses `nginx:1.30.7-alpine`, which contains the November 18
+  upstream fixes. Record the exact image digest and verify the version in the
+  running container.
+- Review Debian kernel security updates and verify the running kernel on
+  Vision before starting the test.
+- Use Docker Engine 28 or newer for the `127.0.0.1:8080` binding. Verify the
+  HTTP response from Vision and confirm the port is unreachable from Ultron
+  over the LAN. Keep the router free of port forwards for the test.
+- Enable the `nginx-test` Compose profile only for the test and remove the
+  test container afterward.
 
-Expect a running Nginx container and an HTTP 200 response. To remove the
-test container when finished, run:
-
-```sh
-sudo docker compose -f compose.yaml down
-```
+[NGINX security advisories](https://nginx.org/en/security_advisories.html) ·
+[Official NGINX image tags](https://hub.docker.com/_/nginx/tags) ·
+[Docker port publishing](https://docs.docker.com/engine/network/port-publishing/)
